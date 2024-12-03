@@ -1,0 +1,1 @@
+﻿Check out our github page for examples: https://github.com/QwipsServiceSolutionAS/Qwips.ServiceSystem.Integration.ClientSdk
