@@ -1,0 +1,28 @@
+{
+  "descriptionHash": "7B58269B0621DDE6249537336601C49726052849FE29E9E03437C8ADB6C88E32850C024CEE32F673B5C56415DADCC850C08B44C4DED8229F74F912DAA2C4B7D8",
+  "descriptionLocation": "https://test1.qwips.net/swagger/Integration/swagger.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.6.0-preview.202308310001",
+  "clientClassName": "ServiceSystemClient",
+  "clientNamespaceName": "Qwips.Integration.ClientSdk",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
