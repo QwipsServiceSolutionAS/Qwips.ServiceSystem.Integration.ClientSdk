@@ -5,13 +5,13 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
-using Qwips.Integration.ClientSdk.Api2;
+using Qwips.ServiceSystem.Integration.ClientSdk.Api2;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Integration.ClientSdk {
+namespace Qwips.ServiceSystem.Integration.ClientSdk {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>

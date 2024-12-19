@@ -3,38 +3,50 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Address;
+using Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Contact;
 using Qwips.ServiceSystem.Integration.ClientSdk.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item
+namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api2\Integration\WarehouseLocation\{id}
+    /// Builds and executes requests for operations under \api2\Integration\Customer\{customer-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WarehouseLocationItemRequestBuilder : BaseRequestBuilder
+    public partial class CustomerItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The Address property</summary>
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Address.AddressRequestBuilder Address
+        {
+            get => new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Address.AddressRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Contact property</summary>
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Contact.ContactRequestBuilder Contact
+        {
+            get => new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.Contact.ContactRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item.WarehouseLocationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.CustomerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseLocationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/WarehouseLocation/{id}", pathParameters)
+        public CustomerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/Customer/{customer%2Did}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item.WarehouseLocationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.CustomerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseLocationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/WarehouseLocation/{id}", rawUrl)
+        public CustomerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/Customer/{customer%2Did}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete a warehouse location.
+        /// Deactivates a customer. This removes the customer from future workflows.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,25 +64,25 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLo
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get single warehouse location.
+        /// Get single customer by id.
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationWarehouseLocationDto"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationCustomerDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationWarehouseLocationDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationCustomerDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationWarehouseLocationDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationCustomerDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationWarehouseLocationDto>(requestInfo, global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationWarehouseLocationDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationCustomerDto>(requestInfo, global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationCustomerDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a warehouse location.
+        /// Deactivates a customer. This removes the customer from future workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,7 +100,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLo
             return requestInfo;
         }
         /// <summary>
-        /// Get single warehouse location.
+        /// Get single customer by id.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,18 +121,18 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item.WarehouseLocationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.CustomerItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item.WarehouseLocationItemRequestBuilder WithUrl(string rawUrl)
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.CustomerItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLocation.Item.WarehouseLocationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Customer.Item.CustomerItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WarehouseLocationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class CustomerItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
@@ -128,7 +140,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.WarehouseLo
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WarehouseLocationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class CustomerItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -4,7 +4,7 @@
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.6.0-preview.202308310001",
   "clientClassName": "ServiceSystemClient",
-  "clientNamespaceName": "Qwips.Integration.ClientSdk",
+  "clientNamespaceName": "Qwips.ServiceSystem.Integration.ClientSdk",
   "language": "CSharp",
   "usesBackingStore": false,
   "includeAdditionalData": true,

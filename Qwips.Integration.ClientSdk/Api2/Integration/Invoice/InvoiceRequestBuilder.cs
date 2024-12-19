@@ -9,60 +9,60 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item
+namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api2\Integration\MachineType\{id}
+    /// Builds and executes requests for operations under \api2\Integration\Invoice
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MachineTypeItemRequestBuilder : BaseRequestBuilder
+    public partial class InvoiceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item.MachineTypeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachineTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/MachineType/{id}", pathParameters)
+        public InvoiceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/Invoice{?jobId*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item.MachineTypeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachineTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/MachineType/{id}", rawUrl)
+        public InvoiceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api2/Integration/Invoice{?jobId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get single machine type by id.
+        /// Get complete invoice view
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineTypeDto"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.InvoiceViewDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineTypeDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.InvoiceViewDto?> GetAsync(Action<RequestConfiguration<global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder.InvoiceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineTypeDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.InvoiceViewDto> GetAsync(Action<RequestConfiguration<global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder.InvoiceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineTypeDto>(requestInfo, global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineTypeDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.InvoiceViewDto>(requestInfo, global::Qwips.ServiceSystem.Integration.ClientSdk.Models.InvoiceViewDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get single machine type by id.
+        /// Get complete invoice view
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder.InvoiceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder.InvoiceRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -73,18 +73,28 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item.MachineTypeItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item.MachineTypeItemRequestBuilder WithUrl(string rawUrl)
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.MachineType.Item.MachineTypeItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Get complete invoice view
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class InvoiceRequestBuilderGetQueryParameters 
+        {
+            /// <summary>The parent job id</summary>
+            [QueryParameter("jobId")]
+            public int? JobId { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MachineTypeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class InvoiceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Invoice.InvoiceRequestBuilder.InvoiceRequestBuilderGetQueryParameters>
         {
         }
     }
