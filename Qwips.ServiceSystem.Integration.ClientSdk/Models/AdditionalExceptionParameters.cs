@@ -9,7 +9,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AdditionalParameters : IParsable
+    public partial class AdditionalExceptionParameters : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Name property</summary>
@@ -31,12 +31,12 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters();
+            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters();
         }
         /// <summary>
         /// The deserialization information for the current model

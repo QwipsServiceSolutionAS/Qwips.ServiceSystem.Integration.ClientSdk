@@ -16,10 +16,10 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         /// <summary>The AdditionalParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters? AdditionalParameters { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters? AdditionalParameters { get; set; }
 #nullable restore
 #else
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters AdditionalParameters { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters AdditionalParameters { get; set; }
 #endif
         /// <summary>The Errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AdditionalParameters", n => { AdditionalParameters = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters.CreateFromDiscriminatorValue); } },
+                { "AdditionalParameters", n => { AdditionalParameters = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters.CreateFromDiscriminatorValue); } },
                 { "Errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ExceptionId", n => { ExceptionId = n.GetStringValue(); } },
                 { "InnerException", n => { InnerExceptionEscaped = n.GetStringValue(); } },
@@ -93,7 +93,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalParameters>("AdditionalParameters", AdditionalParameters);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.AdditionalExceptionParameters>("AdditionalParameters", AdditionalParameters);
             writer.WriteCollectionOfPrimitiveValues<string>("Errors", Errors);
             writer.WriteStringValue("ExceptionId", ExceptionId);
             writer.WriteStringValue("InnerException", InnerExceptionEscaped);
