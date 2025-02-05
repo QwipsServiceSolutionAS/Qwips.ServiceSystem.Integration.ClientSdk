@@ -16,7 +16,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Order
     public partial class OrderRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Qwips.ServiceSystem.Integration.ClientSdk.api2.Integration.Order.item collection</summary>
-        /// <param name="position">The parent job id</param>
+        /// <param name="position">The parent order id</param>
         /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Order.Item.WithOrderItemRequestBuilder"/></returns>
         public global::Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Order.Item.WithOrderItemRequestBuilder this[string position]
         {

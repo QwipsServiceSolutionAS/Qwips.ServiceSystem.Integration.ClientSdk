@@ -9,7 +9,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class JobDto : IParsable
+    public partial class IntegrationChildJobDto : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ClosedDate property</summary>
@@ -128,6 +128,22 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
 #else
         public string InvoiceReference3 { get; set; }
 #endif
+        /// <summary>The JobType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto? JobType { get; set; }
+#nullable restore
+#else
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto JobType { get; set; }
+#endif
+        /// <summary>The Machine property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto? Machine { get; set; }
+#nullable restore
+#else
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto Machine { get; set; }
+#endif
         /// <summary>The Modified property</summary>
         public DateTimeOffset? Modified { get; set; }
         /// <summary>The NoInvoice property</summary>
@@ -153,12 +169,12 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobDto"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationChildJobDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationChildJobDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobDto();
+            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationChildJobDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,6 +203,8 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
                 { "InvoiceReference", n => { InvoiceReference = n.GetStringValue(); } },
                 { "InvoiceReference2", n => { InvoiceReference2 = n.GetStringValue(); } },
                 { "InvoiceReference3", n => { InvoiceReference3 = n.GetStringValue(); } },
+                { "JobType", n => { JobType = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto.CreateFromDiscriminatorValue); } },
+                { "Machine", n => { Machine = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "NoInvoice", n => { NoInvoice = n.GetBoolValue(); } },
                 { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
@@ -220,6 +238,8 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
             writer.WriteStringValue("InvoiceReference", InvoiceReference);
             writer.WriteStringValue("InvoiceReference2", InvoiceReference2);
             writer.WriteStringValue("InvoiceReference3", InvoiceReference3);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>("JobType", JobType);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto>("Machine", Machine);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteBoolValue("NoInvoice", NoInvoice);
             writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
