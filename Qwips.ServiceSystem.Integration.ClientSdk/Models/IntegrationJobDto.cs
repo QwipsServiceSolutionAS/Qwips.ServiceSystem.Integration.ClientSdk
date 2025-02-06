@@ -172,6 +172,14 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         public DateTimeOffset? Modified { get; set; }
         /// <summary>The NoInvoice property</summary>
         public bool? NoInvoice { get; set; }
+        /// <summary>The Order property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto? Order { get; set; }
+#nullable restore
+#else
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto Order { get; set; }
+#endif
         /// <summary>The PlannedDate property</summary>
         public DateTimeOffset? PlannedDate { get; set; }
         /// <summary>The ServiceManagerComment property</summary>
@@ -234,6 +242,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
                 { "JobType", n => { JobType = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "NoInvoice", n => { NoInvoice = n.GetBoolValue(); } },
+                { "Order", n => { Order = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto.CreateFromDiscriminatorValue); } },
                 { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
                 { "ServiceManagerComment", n => { ServiceManagerComment = n.GetStringValue(); } },
                 { "TechnicianComment", n => { TechnicianComment = n.GetStringValue(); } },
@@ -272,6 +281,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
             writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>("JobType", JobType);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteBoolValue("NoInvoice", NoInvoice);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto>("Order", Order);
             writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
             writer.WriteStringValue("ServiceManagerComment", ServiceManagerComment);
             writer.WriteStringValue("TechnicianComment", TechnicianComment);

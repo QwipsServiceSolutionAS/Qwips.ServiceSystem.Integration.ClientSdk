@@ -139,15 +139,23 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         /// <summary>The Machine property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto? Machine { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineDto? Machine { get; set; }
 #nullable restore
 #else
-        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto Machine { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineDto Machine { get; set; }
 #endif
         /// <summary>The Modified property</summary>
         public DateTimeOffset? Modified { get; set; }
         /// <summary>The NoInvoice property</summary>
         public bool? NoInvoice { get; set; }
+        /// <summary>The Order property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto? Order { get; set; }
+#nullable restore
+#else
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto Order { get; set; }
+#endif
         /// <summary>The PlannedDate property</summary>
         public DateTimeOffset? PlannedDate { get; set; }
         /// <summary>The ServiceManagerComment property</summary>
@@ -204,9 +212,10 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
                 { "InvoiceReference2", n => { InvoiceReference2 = n.GetStringValue(); } },
                 { "InvoiceReference3", n => { InvoiceReference3 = n.GetStringValue(); } },
                 { "JobType", n => { JobType = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto.CreateFromDiscriminatorValue); } },
-                { "Machine", n => { Machine = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto.CreateFromDiscriminatorValue); } },
+                { "Machine", n => { Machine = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineDto.CreateFromDiscriminatorValue); } },
                 { "Modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "NoInvoice", n => { NoInvoice = n.GetBoolValue(); } },
+                { "Order", n => { Order = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto.CreateFromDiscriminatorValue); } },
                 { "PlannedDate", n => { PlannedDate = n.GetDateTimeOffsetValue(); } },
                 { "ServiceManagerComment", n => { ServiceManagerComment = n.GetStringValue(); } },
                 { "TechnicianComment", n => { TechnicianComment = n.GetStringValue(); } },
@@ -239,9 +248,10 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
             writer.WriteStringValue("InvoiceReference2", InvoiceReference2);
             writer.WriteStringValue("InvoiceReference3", InvoiceReference3);
             writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobTypeDto>("JobType", JobType);
-            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.MachineDto>("Machine", Machine);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationMachineDto>("Machine", Machine);
             writer.WriteDateTimeOffsetValue("Modified", Modified);
             writer.WriteBoolValue("NoInvoice", NoInvoice);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.OrderDto>("Order", Order);
             writer.WriteDateTimeOffsetValue("PlannedDate", PlannedDate);
             writer.WriteStringValue("ServiceManagerComment", ServiceManagerComment);
             writer.WriteStringValue("TechnicianComment", TechnicianComment);
