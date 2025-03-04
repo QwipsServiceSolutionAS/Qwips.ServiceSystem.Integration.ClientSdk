@@ -34,7 +34,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Job.Item
         {
         }
         /// <summary>
-        /// Get job from job id.
+        /// Get job from job id.    Includes:        JobStatus        JobSubStatus        Customer        JobType        Order        Child jobs            Machine                MachineModel            Order                OrderDetails        Appointments            Participants                User
         /// </summary>
         /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationJobDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Api2.Integration.Job.Item
             return await RequestAdapter.SendAsync<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationJobDto>(requestInfo, global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationJobDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get job from job id.
+        /// Get job from job id.    Includes:        JobStatus        JobSubStatus        Customer        JobType        Order        Child jobs            Machine                MachineModel            Order                OrderDetails        Appointments            Participants                User
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -12,6 +12,14 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
     public partial class IntegrationJobDto : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The Appointments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationAppointmentDto>? Appointments { get; set; }
+#nullable restore
+#else
+        public List<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationAppointmentDto> Appointments { get; set; }
+#endif
         /// <summary>The ClosedDate property</summary>
         public DateTimeOffset? ClosedDate { get; set; }
         /// <summary>The CompletedDate property</summary>
@@ -216,6 +224,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Appointments", n => { Appointments = n.GetCollectionOfObjectValues<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationAppointmentDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationAppointmentDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ClosedDate", n => { ClosedDate = n.GetDateTimeOffsetValue(); } },
                 { "CompletedDate", n => { CompletedDate = n.GetDateTimeOffsetValue(); } },
                 { "CreatedBy", n => { CreatedBy = n.GetStringValue(); } },
@@ -255,6 +264,7 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationAppointmentDto>("Appointments", Appointments);
             writer.WriteDateTimeOffsetValue("ClosedDate", ClosedDate);
             writer.WriteDateTimeOffsetValue("CompletedDate", CompletedDate);
             writer.WriteStringValue("CreatedBy", CreatedBy);

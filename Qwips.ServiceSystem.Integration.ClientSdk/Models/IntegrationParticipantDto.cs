@@ -9,46 +9,30 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class JobStatusDto : IParsable
+    public partial class IntegrationParticipantDto : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Color property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Color { get; set; }
-#nullable restore
-#else
-        public string Color { get; set; }
-#endif
-        /// <summary>The Icon property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Icon { get; set; }
-#nullable restore
-#else
-        public string Icon { get; set; }
-#endif
         /// <summary>The Id property</summary>
         public int? Id { get; set; }
-        /// <summary>The Name property</summary>
+        /// <summary>The ParticipantStatus property</summary>
+        public int? ParticipantStatus { get; set; }
+        /// <summary>The User property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.UserDto? User { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Qwips.ServiceSystem.Integration.ClientSdk.Models.UserDto User { get; set; }
 #endif
-        /// <summary>The SortOrder property</summary>
-        public int? SortOrder { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobStatusDto"/></returns>
+        /// <returns>A <see cref="global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationParticipantDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobStatusDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationParticipantDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.JobStatusDto();
+            return new global::Qwips.ServiceSystem.Integration.ClientSdk.Models.IntegrationParticipantDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,11 +42,9 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Color", n => { Color = n.GetStringValue(); } },
-                { "Icon", n => { Icon = n.GetStringValue(); } },
                 { "Id", n => { Id = n.GetIntValue(); } },
-                { "Name", n => { Name = n.GetStringValue(); } },
-                { "SortOrder", n => { SortOrder = n.GetIntValue(); } },
+                { "ParticipantStatus", n => { ParticipantStatus = n.GetIntValue(); } },
+                { "User", n => { User = n.GetObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.UserDto>(global::Qwips.ServiceSystem.Integration.ClientSdk.Models.UserDto.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,11 +54,9 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Color", Color);
-            writer.WriteStringValue("Icon", Icon);
             writer.WriteIntValue("Id", Id);
-            writer.WriteStringValue("Name", Name);
-            writer.WriteIntValue("SortOrder", SortOrder);
+            writer.WriteIntValue("ParticipantStatus", ParticipantStatus);
+            writer.WriteObjectValue<global::Qwips.ServiceSystem.Integration.ClientSdk.Models.UserDto>("User", User);
         }
     }
 }

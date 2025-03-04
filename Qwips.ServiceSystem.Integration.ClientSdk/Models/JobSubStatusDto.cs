@@ -12,8 +12,6 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
     public partial class JobSubStatusDto : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Count property</summary>
-        public int? Count { get; set; }
         /// <summary>The Id property</summary>
         public int? Id { get; set; }
         /// <summary>The Name property</summary>
@@ -46,7 +44,6 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Count", n => { Count = n.GetIntValue(); } },
                 { "Id", n => { Id = n.GetIntValue(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "ParentId", n => { ParentId = n.GetIntValue(); } },
@@ -60,7 +57,6 @@ namespace Qwips.ServiceSystem.Integration.ClientSdk.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("Count", Count);
             writer.WriteIntValue("Id", Id);
             writer.WriteStringValue("Name", Name);
             writer.WriteIntValue("ParentId", ParentId);
